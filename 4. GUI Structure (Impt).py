@@ -1,6 +1,6 @@
-'''
+"""
 Basic GUI Structure
-'''
+"""
 from tkinter import *
 
 root = Tk()
@@ -16,27 +16,22 @@ deal_label.grid(row=0, column=0, padx=(0, 10))
 deal_label = Label(input_frame, text='Date: ')
 deal_label.grid(row=0, column=2, padx=(0, 10))
 
-ent1 = Entry(input_frame, width=25,textvariable=StringVar())
+ent1 = Entry(input_frame, width=25, textvariable=StringVar())
 ent1.grid(row=0, column=1, padx=(0, 10))
 ent1.focus()
-ent2 = Entry(input_frame, width=15,textvariable=StringVar())
+ent2 = Entry(input_frame, width=15, textvariable=StringVar())
 ent2.grid(row=0, column=4, padx=(0, 10))
 
 button_frame = Frame(root)
-button_frame.grid(sticky = "EW")
+button_frame.grid(sticky="EW")
 button_frame.columnconfigure(0, weight=1)
 button_frame.columnconfigure(1, weight=1)
 button_frame.columnconfigure(2, weight=1)
-bt1 = Button(button_frame, text = "Load Deal")
-bt1.grid(row=0, column=0, sticky = "EW")
-bt2 = Button(button_frame, text = "Get Trepp Mapping")
-bt2.grid(row=0, column=1, sticky = "EW")
-bt3 = Button(button_frame, text = "Exit")
-bt3.grid(row=0, column=2, sticky = "EW")
+bt1 = Button(button_frame, text="Load Deal")
+bt1.grid(row=0, column=0, sticky="EW")
+bt2 = Button(button_frame, text="Get Trepp Mapping")
+bt2.grid(row=0, column=1, sticky="EW")
+bt3 = Button(button_frame, text="Exit")
+bt3.grid(row=0, column=2, sticky="EW")
 
 root.mainloop()
-
-
-
-
-

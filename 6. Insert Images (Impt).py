@@ -4,7 +4,7 @@ from PIL import Image, ImageTk
 # standard setting
 root = Tk()
 root.geometry("600x400")
-root.resizable(False,False)
+root.resizable(False, False)
 root.title("My GUI")
 
 img = Image.open("C:\\Users\\Siddhesh\\PycharmProjects\\Python_Project\\google.png").resize((80, 60))

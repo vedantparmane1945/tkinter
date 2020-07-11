@@ -1,45 +1,70 @@
-'''
-Basic GUI Structure
-'''
-from tkinter import *
+# Program to make a simple
+# login screen
 
-root = Tk()
-root.title("Trepp-Spear Mapping")
-root.columnconfigure(0, weight=1)
 
-def deal_date(*args):
-    deal_val = deal.get()
-    date_val = date.get()
-    return deal_val, date_val
+import tkinter as tk
 
-deal = StringVar()
-date = StringVar()
+root = tk.Tk()
 
-input_frame = Frame(root)
-input_frame.grid(padx=10, pady=10)
+# setting the windows size
+root.geometry("600x400")
 
-deal_label = Label(input_frame, text='Deal Name: ')
-deal_label.grid(row=0, column=0, padx=(0, 10))
+# declaring string variable
+# for storing name and password
+name_var = tk.StringVar()
+passw_var = tk.StringVar()
 
-deal_label = Label(input_frame, text='Date: ')
-deal_label.grid(row=0, column=2, padx=(0, 10))
 
-ent1 = Entry(input_frame, width=25,textvariable=deal)
-ent1.grid(row=0, column=1, padx=(0, 10))
-ent1.focus()
-ent2 = Entry(input_frame, width=15,textvariable=date)
-ent2.grid(row=0, column=4, padx=(0, 10))
+# defining a function that will
+# get the name and password and
+# print them on the screen
+def submit():
+    name = name_entry.get()
+    password = passw_var.get()
 
-button_frame = Frame(root)
-button_frame.grid(sticky = "EW")
-button_frame.columnconfigure(0, weight=1)
-button_frame.columnconfigure(1, weight=1)
-button_frame.columnconfigure(2, weight=1)
-bt1 = Button(button_frame, text = "Load Deal", command=deal_date)
-bt1.grid(row=0, column=0, sticky = "EW")
-bt2 = Button(button_frame, text = "Get Trepp Mapping")
-bt2.grid(row=0, column=1, sticky = "EW")
-bt3 = Button(button_frame, text = "Exit")
-bt3.grid(row=0, column=2, sticky = "EW")
+    print("The name is : " + name)
+    print("The password is : " + password)
 
+    name_var.set("")
+    passw_var.set("")
+
+
+# creating a label for
+# name using widget Label
+name_label = tk.Label(root, text='Username',
+                      font=('calibre',
+                            10, 'bold'))
+
+# creating a entry for input
+# name using widget Entry
+name_entry = tk.Entry(root,
+                      textvariable=name_var, font = ('calibre', 10, 'normal'))
+
+# creating a label for password
+passw_label = tk.Label(root,
+                       text='Password',
+                       font=('calibre', 10, 'bold'))
+
+# creating a entry for password
+passw_entry = tk.Entry(root,
+                       textvariable=passw_var,
+                       font=('calibre', 10, 'normal'),
+                       show='*')
+
+# creating a button using the widget
+# Button that will call the submit function
+sub_btn = tk.Button(root, text='Submit',
+                    command=submit)
+
+# placing the label and entry in
+# the required position using grid
+# method
+name_label.grid(row=0, column=0)
+name_entry.grid(row=0, column=1)
+passw_label.grid(row=1, column=0)
+passw_entry.grid(row=1, column=1)
+sub_btn.grid(row=2, column=1)
+
+# performing an infinite loop
+# for the window to display
 root.mainloop()
