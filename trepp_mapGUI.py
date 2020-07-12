@@ -18,7 +18,7 @@ def default_dates():
 
 
 def get_dealname():
-     return ent1.get()
+    return ent1.get()
 
 
 def start_date():
@@ -27,6 +27,10 @@ def start_date():
 
 def end_date():
     return ent3.get()
+
+
+def quit_window():
+    root.destroy()
 
 
 root = Tk()
